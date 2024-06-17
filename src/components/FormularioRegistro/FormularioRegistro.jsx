@@ -4,7 +4,7 @@ import "./FormularioRegistro.css"
 
 const FormularioRegistro = ({props,setProps}) => {
 
-    const manejarCambio = (evento) => {
+    const handleChange = (evento) => {
         const { name, value } = evento.target;
         setProps(prevState => ({
           ...prevState,
@@ -17,7 +17,7 @@ const FormularioRegistro = ({props,setProps}) => {
             <form>
                 <div className="inputContainer">
                     <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="firstName" value={props.firstName} onChange={manejarCambio} />
+                    <input type="text" name="firstName" value={props.firstName} onChange={handleChange} />
                 </div>
                 {
                    props.firstName.length > 0 && props.firstName.length < 2 ?
@@ -26,7 +26,7 @@ const FormularioRegistro = ({props,setProps}) => {
                 }
                 <div className="inputContainer">
                     <label htmlFor="lastName">Last Name</label>
-                    <input type="text" name="lastName" value={props.lastName} onChange={manejarCambio} />
+                    <input type="text" name="lastName" value={props.lastName} onChange={handleChange} />
                 </div>
                 {
                    props.lastName.length > 0 && props.lastName.length < 2 ?
@@ -35,7 +35,7 @@ const FormularioRegistro = ({props,setProps}) => {
                 }
                 <div className="inputContainer">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" value={props.email} onChange={manejarCambio} />
+                    <input type="email" name="email" value={props.email} onChange={handleChange} />
                 </div>
                 {
                    props.email.length > 0 && props.email.length < 5 ?
@@ -44,7 +44,7 @@ const FormularioRegistro = ({props,setProps}) => {
                 }
                 <div className="inputContainer">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" value={props.password} onChange={manejarCambio} />
+                    <input type="password" name="password" value={props.password} onChange={handleChange} />
                 </div>
                 {
                    props.password.length > 0 && props.password.length < 8 ?
@@ -53,7 +53,7 @@ const FormularioRegistro = ({props,setProps}) => {
                 }
                 <div className="inputContainer">
                     <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input type="password" name="confirmPassword" value={props.confirmPassword} onChange={manejarCambio} />
+                    <input type="password" name="confirmPassword" value={props.confirmPassword} onChange={handleChange} />
                 </div>
                 {
                    (props.confirmPassword !== props.password && props.confirmPassword.length > 7) ||
