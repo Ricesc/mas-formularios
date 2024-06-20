@@ -1,8 +1,8 @@
 import React from "react";
 
-const DatosFormulario = ({props}) => {
-    const {firstName,lastName,email,password,confirmPassword} = props;
-    return(
+const DatosFormulario = ({ data }) => {
+    const { firstName, lastName, email, password, confirmPassword } = data;
+    return (
         <div>
             <h2>Your Form Data</h2>
             <p>First Name: {firstName}</p>
@@ -12,7 +12,6 @@ const DatosFormulario = ({props}) => {
             <p>Confirm Password: {confirmPassword}</p>
         </div>
     );
-
-}
+};
 
 export default DatosFormulario;

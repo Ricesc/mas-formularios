@@ -1,24 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import FormularioRegistro from "../FormularioRegistro/FormularioRegistro";
 import DatosFormulario from "../DatosFormulario/DatosFormulario";
 
 const App = () => {
-    const [state, setState] = useState ({
+    const [state, setState] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: "",
-        confirmPassword: ""
-      });
-    
+        confirmPassword: "",
+    });
+
     return (
         <div className="App">
             <h1>Form</h1>
-            <FormularioRegistro props={state} setProps={setState} />
-            <DatosFormulario props={state} />
+            <FormularioRegistro inputs={state} setInputs={setState} />
+            <DatosFormulario data={state} />
         </div>
     );
-}
+};
 
 export default App;
